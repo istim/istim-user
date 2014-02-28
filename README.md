@@ -1,4 +1,2 @@
-istim-user
-==========
-
-Istim user API
+# istim-user
+### a Sails application
