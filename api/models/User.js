@@ -1,9 +1,9 @@
 // Person.js
 module.exports = {
   attributes: {
-    firstName: 'STRING',
-    lastName: 'STRING',
-    birthDate: 'DATE',
+    firstName: 'string',
+    lastName: 'string',
+    birthDate: 'date',
     
     email: {
       type: 'email', // Email type will get validated by the ORM
@@ -11,9 +11,8 @@ module.exports = {
     },
 
     password: {
-      type: 'STRING',
-      maxLength: 20,
-      minLength: 5,
+      type: 'string',
+      minLength: 6,
       required: true
     }
   },
