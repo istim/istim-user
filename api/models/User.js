@@ -16,10 +16,9 @@ module.exports = {
       minLength: 6,
       required: true
     },
-    
+
     is_admin: {
       type : 'boolean',
-      required : true
     }
   },
 
