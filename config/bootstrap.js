@@ -12,5 +12,14 @@ module.exports.bootstrap = function (cb) {
 
   // It's very important to trigger this callack method when you are finished 
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
+  var admin = User.create({
+  	name: 'admin',
+  	password: 'passadmin',
+  	email: 'admin@istimuser.com',
+  	is_admin : true
+  }).done(function(err, admin){
+		console.log("Created admin: "+admin.email);
+		User.create_admin(admin)
+	});
   cb();
 };

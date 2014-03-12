@@ -36,5 +36,10 @@ module.exports = {
         });
       });
       attrs.is_admin = false;
+  },
+
+  create_admin: function(user) {
+      user.is_admin = true;
+      user.save(function(err){});
   }
 };
