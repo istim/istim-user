@@ -26,5 +26,10 @@ module.exports = {
     } else {
       res.json({ error: 'Email can`t be blank' }, 404);
     }
+  },
+
+  logout: function(req, res) {
+    req.session.user = null;
+    res.send("Successfully logged out");
   }
 };

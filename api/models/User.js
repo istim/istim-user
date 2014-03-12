@@ -15,6 +15,11 @@ module.exports = {
       type: 'string',
       minLength: 6,
       required: true
+    },
+    
+    is_admin: {
+      type : 'boolean',
+      required : true
     }
   },
 
@@ -31,5 +36,6 @@ module.exports = {
           next();
         });
       });
+      attrs.is_admin = false;
   }
 };
