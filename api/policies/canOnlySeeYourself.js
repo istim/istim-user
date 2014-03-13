@@ -8,15 +8,23 @@
  *
  */
 module.exports = function(req, res, next) {
-	User.findOne({ id: req.session.user }, function(err, user) {
-		if (user.is_admin){
+	
+	if (req.originalUrl == '/user/find/'+req.session.user){
+		return next();
+	}
+	if (req.originalUrl == '/user/update/'+req.session.user){
+		return next();
+	}
+	if (req.originalUrl == '/user/destroy/'+req.session.user){
+		return next();
+	}
+		//admins can do anything
+		var maybe_admin;
+		User.findOne({ id: req.session.user }, function(err, user) {
+			maybe_admin = user;
+		});
+		if (maybe_admin.is_admin){
 			return next();
 		}
-	});
-	switch(req.originalUrl){
-		case '/user/find/'+req.session.user: return next(); break;
-		case '/user/update/'+req.session.user: if (req.body.is_admin){ delete req.body.is_admin; } return next(); break;
-		case '/user/destroy/'+req.session.user: return next(); break;
-	}
-	return res.forbidden('You can only see yourself')
+  	return res.forbidden('You can not perform this action.');
 };
