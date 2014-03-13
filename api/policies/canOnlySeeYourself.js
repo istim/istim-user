@@ -16,6 +16,7 @@ module.exports = function(req, res, next) {
 	switch(req.originalUrl){
 		case '/user/find/'+req.session.user.id: return next(); break;
 		case '/user/update/'+req.session.user.id: return next(); break;
+		case '/user/destroy/'+req.session.user.id: return next(); break;
 	}
 	return res.forbidden('You can only see yourself')
 };
