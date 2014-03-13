@@ -18,9 +18,10 @@ module.exports.policies = {
   // (`true` allows public access) 
   '*': true,
   	UserController: {
-		find: 'isAuthenticated',
-		destroy : 'isAuthenticated',
-		update : 'isAuthenticated'
+  		create: 'alreadyAuthenticated',
+		find: ['isAuthenticated', 'canOnlySeeYourself'],
+		destroy : ['isAuthenticated', 'canOnlySeeYourself'],
+		update : ['isAuthenticated', 'canOnlySeeYourself']
 	},
 
 	AuthController: {
