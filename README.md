@@ -10,7 +10,7 @@
 
 - http://istim-user-gui.jit.su/
 
-##Interface
+##Model
 
 - <b> User </b>
 	
@@ -19,7 +19,7 @@
 	* password
 	* firstName
 	* lastName
-	* bithDate
+	* birthDate
 
 ##Rotas:
 - <b> Create:</b> Cria um novo usuário
