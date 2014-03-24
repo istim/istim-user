@@ -16,17 +16,32 @@ module.exports.policies = {
   // Default policy for all controllers and actions
   // (`true` allows public access) 
   '*': true,
-  	UserController: {
-  		create: 'alreadyAuthenticated',
-		find: ['isAuthenticated', 'canOnlySeeYourself'],
-		destroy : ['isAuthenticated', 'canOnlySeeYourself'],
-		update : ['isAuthenticated', 'canOnlySeeYourself']
-	},
-
-	AuthController: {
-		login: 'alreadyAuthenticated',
-		logout: 'isAuthenticated'
-	}
+  UserController: {
+  	update: ['isAuthenticated', 'isAdmin'],
+  	destroy: ['isAuthenticated', 'isAdmin'],
+  	find: ['isAuthenticated', 'isAdmin'],
+  	getUserInfo: ['isAuthorized', 'hasGrant'],
+  	login: ['alreadyAuthenticated']
+  },
+  ClientController: {
+  	update: ['isAuthenticated', 'isAdmin'],
+  	destroy: ['isAuthenticated', 'isAdmin'],
+  	find: ['isAuthenticated', 'isAdmin'],
+  	login: ['alreadyAuthenticated']
+  },
+  TokenController: {
+  	create: ['isAuthenticated', 'isAdmin'],
+  	update: ['isAuthenticated', 'isAdmin'],
+  	destroy: ['isAuthenticated', 'isAdmin'],
+  	find: ['isAuthenticated', 'isAdmin']
+  },
+  GrantController: {
+  	create: ['isAuthenticated', 'isAdmin'],
+  	update: ['isAuthenticated', 'isAdmin'],
+  	destroy: ['isAuthenticated', 'isAdmin'],
+  	find: ['isAuthenticated', 'isAdmin'],
+  	grantAccess: ['isAuthenticated', 'isAdmin']
+  }
   /*
 	// Here's an example of adding some policies to a controller
 	RabbitController: {

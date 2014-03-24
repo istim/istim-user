@@ -40,7 +40,8 @@ module.exports = {
   environment: process.env.NODE_ENV || 'production',
   host: process.env.HOST || 'istim-user.jit.su',
 
-
+  //port: process.env.PORT || 1337,
+  //environment: process.env.NODE_ENV || 'development'
 
 
   // The runtime "environment" of your Sails app is either 'development' or 'production'.

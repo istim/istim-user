@@ -23,19 +23,13 @@ module.exports = {
   },
 
   beforeCreate: function (attrs, next) {
-      var bcrypt = require('bcrypt');
-
-      bcrypt.genSalt(10, function(err, salt) {
-        if (err) return next(err);
-
-        bcrypt.hash(attrs.password, salt, function(err, hash) {
-          if (err) return next(err);
-
-          attrs.password = hash;
-          next();
-        });
-      });
+    var bcryptUtils = require('istim-user-utils/generateHash');
+    bcryptUtils.generateHash(attrs.password, function(err, hash){
+      if (err) return next(err);
+      attrs.password = hash
       attrs.is_admin = false;
+      next();
+    });
   },
 
   create_admin: function(user) {
