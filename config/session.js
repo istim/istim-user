@@ -15,7 +15,7 @@ module.exports.session = {
   // Session secret is automatically generated when your new app is created
   // Replace at your own risk in production-- you will invalidate the cookies of your users,
   // forcing them to log in again. 
-  secret: '66d0b17fad68f6803c5233ddeb893c27'
+  secret: '66d0b17fad68f6803c5233ddeb893c27',
 
 
   // In production, uncomment the following lines to set up a shared redis session store
@@ -35,17 +35,19 @@ module.exports.session = {
 
 
   // Uncomment the following lines to use your Mongo adapter as a session store
-  // adapter: 'mongo',
-  //
-  // host: 'localhost',
-  // port: 27017,
-  // db: 'sails',
-  // collection: 'sessions',
-  //
+  adapter: 'mongo',
+  
+  host: 'ds061518.mongolab.com',
+  port: 61518,
+  user: 'nodejitsu_istim-user',
+  password: 'ro3bb8d2uf3bih3umjl1064v13',
+  database: 'nodejitsu_istim-user_nodejitsudb4408612239',
+  collection: 'sessions',
+  
   // Optional Values:
   //
   // # Note: url will override other connection settings
-  // url: 'mongodb://user:pass@host:port/database/collection',
+  url: 'mongodb://nodejitsu_istim-user:ro3bb8d2uf3bih3umjl1064v13@ds061518.mongolab.com:61518/nodejitsu_istim-user_nodejitsudb4408612239',
   //
   // username: '',
   // password: '',

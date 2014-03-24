@@ -16,7 +16,7 @@ module.exports.adapters = {
 
   // If you leave the adapter config unspecified 
   // in a model definition, 'default' will be used.
-  'default': 'memory',
+  'default': 'mongo',
   
   memory: {
     module: 'sails-memory'
@@ -27,16 +27,13 @@ module.exports.adapters = {
     module: 'sails-disk'
   },
 
-  // MySQL is the world's most popular relational database.
-  // Learn more: http://en.wikipedia.org/wiki/MySQL
-  myLocalMySQLDatabase: {
-
-    module: 'sails-mysql',
-    host: 'YOUR_MYSQL_SERVER_HOSTNAME_OR_IP_ADDRESS',
-    user: 'YOUR_MYSQL_USER',
-    // Psst.. You can put your password in config/local.js instead
-    // so you don't inadvertently push it up if you're using version control
-    password: 'YOUR_MYSQL_PASSWORD', 
-    database: 'YOUR_MYSQL_DB'
+  mongo: {
+    module: 'sails-mongo',
+    url: 'mongodb://nodejitsu_istim-user:ro3bb8d2uf3bih3umjl1064v13@ds061518.mongolab.com:61518/nodejitsu_istim-user_nodejitsudb4408612239'
+    // host: 'ds061518.mongolab.com',
+    // port: 61518,
+    // user: 'nodejitsu_istim-user',
+    // password: 'ro3bb8d2uf3bih3umjl1064v13',
+    // database: 'nodejitsu_istim-user_nodejitsudb4408612239'
   }
 };

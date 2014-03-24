@@ -17,7 +17,7 @@
 
 module.exports = {
     
-  grantAccess: function(req, res){
+  grantAccess: function (req, res){
     if (req.body.clientId){
     	Client.findOneByClientId(req.body.clientId).done(function(err, client){
     		if (err) res.json({ error: 'An error has occurred' }, 500);

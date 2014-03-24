@@ -33,15 +33,19 @@ module.exports.routes = {
   // 
   // (This would also work if you had a file at: `/views/home.ejs`)
   'post /auth/login': {
-    controller: 'UserController',
+    controller: 'user',
     action: 'login'
   },
+  'post /auth/logout': {
+    controller: 'user',
+    action: 'logout'
+  },
   'get /getUserInfo': {
-    controller: 'UserController',
+    controller: 'user',
     action: 'getUserInfo'
   },
   'post /grantAccess': {
-    controller: 'GrantController',
+    controller: 'grant',
     action: 'grantAccess'
   },
   'post /requestToken': {

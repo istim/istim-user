@@ -21,13 +21,13 @@ module.exports.policies = {
   	destroy: ['isAuthenticated', 'isAdmin'],
   	find: ['isAuthenticated', 'isAdmin'],
   	getUserInfo: ['isAuthorized', 'hasGrant'],
-  	login: ['alreadyAuthenticated']
+  	login: ['alreadyAuthenticated'],
+  	logout: ['isAuthenticated']
   },
   ClientController: {
   	update: ['isAuthenticated', 'isAdmin'],
   	destroy: ['isAuthenticated', 'isAdmin'],
-  	find: ['isAuthenticated', 'isAdmin'],
-  	login: ['alreadyAuthenticated']
+  	find: ['isAuthenticated', 'isAdmin']
   },
   TokenController: {
   	create: ['isAuthenticated', 'isAdmin'],
@@ -40,7 +40,7 @@ module.exports.policies = {
   	update: ['isAuthenticated', 'isAdmin'],
   	destroy: ['isAuthenticated', 'isAdmin'],
   	find: ['isAuthenticated', 'isAdmin'],
-  	grantAccess: ['isAuthenticated', 'isAdmin']
+  	grantAccess: ['isAuthenticated']
   }
   /*
 	// Here's an example of adding some policies to a controller

@@ -17,7 +17,6 @@
 
 module.exports = {
 
-
   request: function(req, res){
     //Request Processing
     var clientUtils = require('istim-user-utils/clientUtils');

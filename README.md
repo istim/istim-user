@@ -24,9 +24,9 @@ http://istim-user.nodejitsu.com
  
 ### Auth
   - Login
-    - ```POST to login```
+    - ```POST to auth/login```
   - Logout
-    - ```GET to logout```
+    - ```GET to auth/logout```
   
 
 ## Example of use

@@ -55,6 +55,11 @@ module.exports = {
       }
     });
   },
+  logout: function(req, res){
+    req.session.authenticated = null;
+    req.session.user = null;
+    res.json('Logout success!');
+  },
   _config: {
     blueprints: {
       actions: false

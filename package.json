@@ -1,28 +1,29 @@
 {
-    "name": "istim-user",
-    "private": true,
-    "version": "0.0.0-6",
-    "description": "a Sails application",
-    "dependencies": {
-        "sails": "0.9.9",
-        "grunt": "0.4.1",
-        "sails-disk": "~0.9.0",
-        "ejs": "0.8.4",
-        "optimist": "0.3.4",
-        "sails-memory": "0.9.0",
-        "bcrypt": "0.7.7",
-        "istim-user-utils": "0.0.1"
-    },
-    "scripts": {
-        "start": "node app.js",
-        "debug": "node debug app.js"
-    },
-    "main": "app.js",
-    "repository": "",
-    "author": "",
-    "license": "",
-    "subdomain": "istim-user",
-    "engines": {
-        "node": "0.10.x"
-    }
+  "name": "istim-user",
+  "private": true,
+  "version": "0.0.0-9",
+  "description": "istim-user application",
+  "dependencies": {
+    "sails": "0.9.9",
+    "grunt": "0.4.1",
+    "sails-disk": "~0.9.0",
+    "ejs": "0.8.4",
+    "optimist": "0.3.4",
+    "sails-memory": "0.9.0",
+    "bcrypt": "0.7.7",
+    "istim-user-utils": "0.0.1",
+    "sails-mongo": "~0.9.7"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": "",
+  "author": "",
+  "license": "",
+  "subdomain": "istim-user",
+  "engines": {
+    "node": "0.10.x"
+  }
 }
