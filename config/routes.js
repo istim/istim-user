@@ -49,7 +49,7 @@ module.exports.routes = {
     action: 'grantAccess'
   },
   'post /requestToken': {
-    controller: 'TokenController',
+    controller: 'token',
     action: 'request'
   }
   /*
