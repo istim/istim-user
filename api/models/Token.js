@@ -7,7 +7,7 @@
  */
 
 module.exports = {
-
+  migrate: 'safe',
   attributes: {
     clientId: {
       type: 'string',
