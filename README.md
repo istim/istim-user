@@ -12,7 +12,7 @@ http://istim-user.nodejitsu.com
 ## Services
 ### User
   - Publish user
-    - ```POST to user/create```
+    - ```POST to user```
   - Edit user info
      - ```PUT to user/:id```
   - Remove user
