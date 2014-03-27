@@ -16,7 +16,17 @@
  */
 
 module.exports = {
+  getAuthenticated: function(req, res){
+    if (!req.body.userid) res.json({ error: 'Invalid user id' }, 400);
+    AuthenticatedUser.findOneById(req.body.userid).done(function(err, object){
+      if (err) res.json({ error: 'DB error' }, 500);
+      if (object) res.json({authenticated: 'yes'});
+      else res.json({authenticated: 'no'})
+    })
+  },
+
   getUserInfo: function(req, res){
+    if (!req.body.userid) res.json({ error: 'Invalid user id' }, 400);
     User.findOneById(req.headers.userid).done(function (err, user){
       if (err) res.json({ error: 'DB error' }, 500);
       if (user) {
@@ -30,8 +40,9 @@ module.exports = {
     });
   },
   login: function(req, res){
+    if (!req.body.email) res.json({ error: 'Invalid email' }, 400);
+    if (!req.body.password) res.json({ error: 'Invalid password' }, 400);
   	var bcrypt = require('bcrypt');
-
     User.findOneByEmail(req.body.email).done(function (err, user) {
       if (err) res.json({ error: 'DB error' }, 500);
 
@@ -41,9 +52,16 @@ module.exports = {
 
           if (match) {
             // password match
-            req.session.authenticated = true;
-            req.session.user = user.id;
-            res.json(user);
+            AuthenticatedUser.create({userId: user.id}).done(function(err, object){
+              if (err) res.json(err)
+              if (object){
+                req.session.authenticated = true;
+                req.session.user = user.id;
+                res.json(user);
+              }else{
+                res.json({error: 'Unexpected system behavior'}, 500)
+              }
+            });
           } else {
             // invalid password
             if (req.session.user) req.session.user = null;
@@ -56,9 +74,14 @@ module.exports = {
     });
   },
   logout: function(req, res){
-    req.session.authenticated = null;
-    req.session.user = null;
-    res.json('Logout success!');
+    AuthenticatedUser.destroy({id:  req.session.user}).done(function(err){
+      if (err) res.json({error: 'Unexpected system behavior'}, 500);
+      else {
+        req.session.authenticated = null;
+        req.session.user = null;
+        res.json('Logout success!');
+      }
+    });
   },
   _config: {
     blueprints: {

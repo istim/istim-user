@@ -19,6 +19,10 @@ module.exports = {
 
   request: function(req, res){
     //Request Processing
+    if (!req.body.email) res.json({ error: 'Invalid email' }, 400);
+    if (!req.body.password) res.json({ error: 'Invalid password' }, 400);
+    if (!req.body.clientId) res.json({ error: 'Invalid clientId' }, 400);
+    if (!req.body.clientSecret) res.json({ error: 'Invalid clientSecret' }, 400);
     var clientUtils = require('istim-user-utils/clientUtils');
     clientUtils.tryLogin(req.body.email, req.body.password, function(message, code, client){
       if (message == 'success'){

@@ -1,6 +1,5 @@
 // Person.js
 module.exports = {
-  migrate: 'safe',
   attributes: {
     firstName: 'string',
     lastName: 'string',

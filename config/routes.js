@@ -51,6 +51,10 @@ module.exports.routes = {
   'post /requestToken': {
     controller: 'token',
     action: 'request'
+  },
+  'post /authenticated': {
+    controller: 'user',
+    action: 'getAuthenticated'
   }
   /*
   // But what if you want your home page to display

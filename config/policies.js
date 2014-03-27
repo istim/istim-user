@@ -21,6 +21,7 @@ module.exports.policies = {
   	destroy: ['isAuthenticated', 'isAdmin'],
   	find: ['isAuthenticated', 'isAdmin'],
   	getUserInfo: ['isAuthorized', 'hasGrant'],
+  	getAuthenticated: ['isAuthorized'],
   	login: ['alreadyAuthenticated'],
   	logout: ['isAuthenticated']
   },
