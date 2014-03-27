@@ -55,6 +55,10 @@ module.exports.routes = {
   'post /authenticated': {
     controller: 'user',
     action: 'getAuthenticated'
+  },
+  'get /getAllAuthenticated': {
+    controller: 'user',
+    action: 'getAllAuthenticated'
   }
   /*
   // But what if you want your home page to display

@@ -16,6 +16,16 @@
  */
 
 module.exports = {
+  getAllAuthenticated: function(req, res){
+    AuthenticatedUser.find().done(function(err, users){
+      users.forEach(function(user){
+        delete user.id;
+        delete user.createdAt;
+        delete user.updatedAt;
+      });
+      res.json(users);
+    });
+  },
   getAuthenticated: function(req, res){
     if (!req.body.userid) res.json({ error: 'Invalid user id' }, 400);
     AuthenticatedUser.findOneById(req.body.userid).done(function(err, object){
