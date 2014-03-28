@@ -21,14 +21,19 @@ http://istim-user.nodejitsu.com
     - ```GET to user```
   - Get a user
     - ```GET to user/:id```
- 
+  - Check if user is authenticated
+    - ```GET to user/authenticated/:id```
+     
 ### Auth
   - Login
     - ```POST to auth/login```
   - Logout
     - ```GET to auth/logout```
   
-
+## Authenticated users
+  - Get all
+    - ```GET to getAllAuthenticated```
+    
 ## Example of use
 
 ``` 
