@@ -30,7 +30,7 @@ http://istim-user.nodejitsu.com
   - Logout
     - ```GET to auth/logout```
   
-## Authenticated users
+### Authenticated users
   - Get all
     - ```GET to getAllAuthenticated```
     
