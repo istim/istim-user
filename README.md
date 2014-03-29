@@ -7,7 +7,10 @@ User manager API for the Istim Gaming Platform.
 ## Server URL
 
 http://istim-user.nodejitsu.com
- 
+
+## How to use step by step (POSTMAN)
+
+https://drive.google.com/folderview?id=0B7-Sn2zABPsSU2R2ZmtuYWpyeHM&usp=sharing
 
 ## Services
 ### User
