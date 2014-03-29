@@ -13,6 +13,8 @@ http://istim-user.nodejitsu.com
 ### User
   - Publish user
     - ```POST to user```
+       - ``` email ```
+       - ``` password ```
   - Edit user info
      - ```PUT to user/:id```
   - Remove user
@@ -22,11 +24,14 @@ http://istim-user.nodejitsu.com
   - Get a user
     - ```GET to user/:id```
   - Check if user is authenticated
-    - ```GET to user/authenticated/:id```
+    - ```POST to user/authenticated/```
+       - ``` userId ```
      
 ### Auth
   - Login
     - ```POST to auth/login```
+       - ``` email ```
+       - ``` password ```
   - Logout
     - ```GET to auth/logout```
   
