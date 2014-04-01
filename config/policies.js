@@ -16,34 +16,34 @@ module.exports.policies = {
   // Default policy for all controllers and actions
   // (`true` allows public access) 
   '*': true,
-  // UserController: {
-  // 	update: ['isAuthenticated', 'isAdmin'],
-  // 	destroy: ['isAuthenticated', 'isAdmin'],
-  // 	find: ['isAuthenticated', 'isAdmin'],
-  // 	getUserInfo: ['isAuthorized', 'hasGrant'],
-  // 	getAuthenticated: ['isAuthorized'],
-  // 	getAllAuthenticated: ['isAuthorized'],
-  // 	login: ['alreadyAuthenticated'],
-  // 	logout: ['isAuthenticated']
-  // },
-  // ClientController: {
-  // 	update: ['isAuthenticated', 'isAdmin'],
-  // 	destroy: ['isAuthenticated', 'isAdmin'],
-  // 	find: ['isAuthenticated', 'isAdmin']
-  // },
-  // TokenController: {
-  // 	create: ['isAuthenticated', 'isAdmin'],
-  // 	update: ['isAuthenticated', 'isAdmin'],
-  // 	destroy: ['isAuthenticated', 'isAdmin'],
-  // 	find: ['isAuthenticated', 'isAdmin']
-  // },
-  // GrantController: {
-  // 	create: ['isAuthenticated', 'isAdmin'],
-  // 	update: ['isAuthenticated', 'isAdmin'],
-  // 	destroy: ['isAuthenticated', 'isAdmin'],
-  // 	find: ['isAuthenticated', 'isAdmin'],
-  // 	grantAccess: ['isAuthenticated']
-  // }
+  UserController: {
+  	update: ['isAuthenticated', 'isAdmin'],
+  	destroy: ['isAuthenticated', 'isAdmin'],
+  	find: ['isAuthenticated', 'isAdmin'],
+  	getUserInfo: ['isAuthorized', 'hasGrant'],
+  	getAuthenticated: ['isAuthorized'],
+  	getAllAuthenticated: ['isAuthorized'],
+  	login: ['alreadyAuthenticated'],
+  	logout: ['isAuthenticated']
+  },
+  ClientController: {
+  	update: ['isAuthenticated', 'isAdmin'],
+  	destroy: ['isAuthenticated', 'isAdmin'],
+  	find: ['isAuthenticated', 'isAdmin']
+  },
+  TokenController: {
+  	create: ['isAuthenticated', 'isAdmin'],
+  	update: ['isAuthenticated', 'isAdmin'],
+  	destroy: ['isAuthenticated', 'isAdmin'],
+  	find: ['isAuthenticated', 'isAdmin']
+  },
+  GrantController: {
+  	create: ['isAuthenticated', 'isAdmin'],
+  	update: ['isAuthenticated', 'isAdmin'],
+  	destroy: ['isAuthenticated', 'isAdmin'],
+  	find: ['isAuthenticated', 'isAdmin'],
+  	grantAccess: ['isAuthenticated']
+  }
   /*
 	// Here's an example of adding some policies to a controller
 	RabbitController: {
