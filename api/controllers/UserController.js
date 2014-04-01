@@ -30,8 +30,8 @@ module.exports = {
     if (!req.body.userId) res.json({ error: 'Invalid user id' }, 400);
     AuthenticatedUser.findOneByUserId(req.body.userId).done(function(err, object){
       if (err) res.json({ error: 'DB error' }, 500);
-      if (object) res.json({'Authenticated': 'yes'});
-      res.json({'Authenticated': 'no'});  
+      if (object) res.json({authenticated: 'yes'});
+      else res.json({authenticated: 'no'});
     })
   },
 
