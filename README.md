@@ -26,9 +26,7 @@ https://drive.google.com/folderview?id=0B7-Sn2zABPsSU2R2ZmtuYWpyeHM&usp=sharing
     - ```GET to user```
   - Get a user
     - ```GET to user/:id```
-  - Check if user is authenticated
-    - ```POST to user/authenticated/```
-       - ``` userId ```
+
      
 ### Auth
   - Login
@@ -39,6 +37,9 @@ https://drive.google.com/folderview?id=0B7-Sn2zABPsSU2R2ZmtuYWpyeHM&usp=sharing
     - ```GET to auth/logout```
   
 ### Authenticated users
+  - Check if user is authenticated
+    - ```POST to authenticated```
+       - ``` userId ``` 
   - Get all
     - ```GET to getAllAuthenticated```
     
