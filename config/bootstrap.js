@@ -25,14 +25,14 @@ module.exports.bootstrap = function (cb) {
         console.log('Creating admin user');
         if (user) {
             console.log('Giving admin user admin privileges');
-            User.createAdmin(user); //User now is Admin
+            User.create_admin(user); //User now is Admin
             cb();
         } else User.findOneByEmail('admin@istimuser.com').done(function(err, user){
             if (err) cb();
-            console.log('Admin user already exists');
+            console.log('Admin user already exists, looking up for him');
             if (user) {
                 console.log('Giving admin user admin privileges');
-                User.createAdmin(user); //User now is Admin
+                User.create_admin(user); //User now is Admin
                 cb();
             } else {
                 console.log('Everything else failed, just go on!');
