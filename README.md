@@ -39,7 +39,7 @@ https://drive.google.com/folderview?id=0B7-Sn2zABPsSU2R2ZmtuYWpyeHM&usp=sharing
 ### Authenticated users
   - Check if user is authenticated
     - ```POST to authenticated```
-       - ``` userId ``` 
+       - ``` userid ``` 
   - Get all
     - ```GET to getAllAuthenticated```
     
