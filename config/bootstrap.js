@@ -15,27 +15,27 @@ module.exports.bootstrap = function (cb) {
     if (err) cb(); //DB error
     //Admin exists
     if (user) {
-        console.log('Admin already exists');
+        console.log('Admin already exists.');
         cb();
     }
     //admin do not exists
     else User.create({ email: 'admin@istimuser.com', password: 'passadmin'}).done(function(err, user){
         if (err) cb(); //DB Error
         //User created
-        console.log('Creating admin user');
+        console.log('Creating admin user.');
         if (user) {
-            console.log('Giving admin user admin privileges');
+            console.log('Giving admin user admin privileges.');
             User.create_admin(user); //User now is Admin
             cb();
-        } else User.findOneByEmail('admin@istimuser.com').done(function(err, user){
+        } else User.findOneByEmail('admin@istimuser.com.').done(function(err, user){
             if (err) cb();
-            console.log('Admin user already exists, looking up for him');
+            console.log('Admin user already exists, looking up for him.');
             if (user) {
-                console.log('Giving admin user admin privileges');
+                console.log('Giving admin user admin privileges.');
                 User.create_admin(user); //User now is Admin
                 cb();
             } else {
-                console.log('Everything else failed, just go on!');
+                console.log('Everything else failed, just go on!!');
                 cb();
             };
         });
