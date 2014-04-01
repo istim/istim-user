@@ -2,6 +2,6 @@
 module.exports = {
   migrate: 'safe',
   attributes: {
-    userID: 'string',
+    userId: 'string',
   },
 };

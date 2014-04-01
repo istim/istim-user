@@ -28,9 +28,10 @@ module.exports = {
   },
   getAuthenticated: function(req, res){
     if (!req.body.userId) res.json({ error: 'Invalid user id' }, 400);
-    AuthenticatedUser.findOneById(req.body.userId).done(function(err, object){
-      if (err) res.json({authenticated: 'no'});
-      else res.json({authenticated: 'yes'})
+    AuthenticatedUser.findOneByUserId(req.body.userId).done(function(err, object){
+      if (err) res.json({ error: 'DB error' }, 500);
+      if (object) res.json({'Authenticated': 'yes'});
+      res.json({'Authenticated': 'no'});  
     })
   },
 
@@ -83,7 +84,7 @@ module.exports = {
     });
   },
   logout: function(req, res){
-    AuthenticatedUser.destroy({id:  req.session.user}).done(function(err){
+    AuthenticatedUser.destroy({id: req.session.user}).done(function(err){
       if (err) res.json({error: 'Unexpected system behavior'}, 500);
       else {
         req.session.authenticated = null;
