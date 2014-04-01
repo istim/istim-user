@@ -27,17 +27,16 @@ module.exports = {
     });
   },
   getAuthenticated: function(req, res){
-    if (!req.body.userid) res.json({ error: 'Invalid user id' }, 400);
-    AuthenticatedUser.findOneById(req.body.userid).done(function(err, object){
-      if (err) res.json({ error: 'DB error' }, 500);
-      if (object) res.json({authenticated: 'yes'});
-      else res.json({authenticated: 'no'})
+    if (!req.body.userId) res.json({ error: 'Invalid user id' }, 400);
+    AuthenticatedUser.findOneById(req.body.userId).done(function(err, object){
+      if (err) res.json({authenticated: 'no'});
+      else res.json({authenticated: 'yes'})
     })
   },
 
   getUserInfo: function(req, res){
-    if (!req.body.userid) res.json({ error: 'Invalid user id' }, 400);
-    User.findOneById(req.headers.userid).done(function (err, user){
+    if (!req.body.userId) res.json({ error: 'Invalid user id' }, 400);
+    User.findOneById(req.headers.userId).done(function (err, user){
       if (err) res.json({ error: 'DB error' }, 500);
       if (user) {
         delete user.password;
