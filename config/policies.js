@@ -17,31 +17,31 @@ module.exports.policies = {
   // (`true` allows public access) 
   '*': true,
   UserController: {
-  	update: ['isAuthenticated', 'isAdmin'],
-  	destroy: ['isAuthenticated', 'isAdmin'],
-  	find: ['isAuthenticated', 'isAdmin'],
-  	getUserInfo: ['isAuthorized', 'hasGrant'],
-  	getAuthenticated: ['isAuthorized'],
-  	getAllAuthenticated: ['isAuthorized'],
+  	update: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	destroy: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	// find: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	// getUserInfo: ['isAuthorized', 'hasGrant'],
+  	// getAuthenticated: ['isAuthorized'],
+  	// getAllAuthenticated: ['isAuthorized'],
   	login: ['alreadyAuthenticated'],
   	logout: ['isAuthenticated']
   },
   ClientController: {
-  	update: ['isAuthenticated', 'isAdmin'],
-  	destroy: ['isAuthenticated', 'isAdmin'],
-  	find: ['isAuthenticated', 'isAdmin']
+  	update: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	destroy: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	find: ['isAuthenticated', 'isAdminOrObjectOwner']
   },
   TokenController: {
-  	create: ['isAuthenticated', 'isAdmin'],
-  	update: ['isAuthenticated', 'isAdmin'],
-  	destroy: ['isAuthenticated', 'isAdmin'],
-  	find: ['isAuthenticated', 'isAdmin']
+  	create: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	update: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	destroy: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	find: ['isAuthenticated', 'isAdminOrObjectOwner']
   },
   GrantController: {
-  	create: ['isAuthenticated', 'isAdmin'],
-  	update: ['isAuthenticated', 'isAdmin'],
-  	destroy: ['isAuthenticated', 'isAdmin'],
-  	find: ['isAuthenticated', 'isAdmin'],
+  	create: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	update: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	destroy: ['isAuthenticated', 'isAdminOrObjectOwner'],
+  	find: ['isAuthenticated', 'isAdminOrObjectOwner'],
   	grantAccess: ['isAuthenticated']
   }
   /*
