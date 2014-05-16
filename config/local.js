@@ -38,7 +38,7 @@ module.exports = {
 
   port: process.env.PORT || 80,
   environment: process.env.NODE_ENV || 'development',
-  host: process.env.HOST || 'istim-user.jit.su',
+  host: process.env.HOST || 'istimuser.jit.su',
 
   //port: process.env.PORT || 1337,
 

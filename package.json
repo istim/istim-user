@@ -1,7 +1,7 @@
 {
   "name": "istim-user",
   "private": true,
-  "version": "0.0.0-15",
+  "version": "0.0.0-16",
   "description": "istim-user application",
   "dependencies": {
     "sails": "0.9.9",
@@ -22,7 +22,7 @@
   "repository": "",
   "author": "",
   "license": "",
-  "subdomain": "istim-user",
+  "subdomain": "istimuser",
   "engines": {
     "node": "0.10.x"
   }
