@@ -44,14 +44,6 @@ module.exports.routes = {
     controller: 'user',
     action: 'getUserInfo'
   },
-  'post /grantAccess': {
-    controller: 'grant',
-    action: 'grantAccess'
-  },
-  'post /requestToken': {
-    controller: 'token',
-    action: 'request'
-  },
   'post /authenticated': {
     controller: 'user',
     action: 'getAuthenticated'
