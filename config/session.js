@@ -44,6 +44,7 @@ module.exports.session = {
   database: 'nodejitsu_istim-user_nodejitsudb4408612239',
   collection: 'sessions',
   
+  url: 'mongodb://nodejitsu_istim-user:ro3bb8d2uf3bih3umjl1064v13@ds061518.mongolab.com:61518/nodejitsu_istim-user_nodejitsudb4408612239',
   // Optional Values:
   //
   // # Note: url will override other connection settings
