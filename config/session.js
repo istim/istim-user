@@ -35,7 +35,7 @@ module.exports.session = {
 
 
   // Uncomment the following lines to use your Mongo adapter as a session store
-  adapter: 'mongo',
+  adapter: process.env.SESSION_ADAPTER || 'memory',
   
   host: 'ds061518.mongolab.com',
   port: 61518,
@@ -47,7 +47,6 @@ module.exports.session = {
   // Optional Values:
   //
   // # Note: url will override other connection settings
-  url: 'mongodb://nodejitsu_istim-user:ro3bb8d2uf3bih3umjl1064v13@ds061518.mongolab.com:61518/nodejitsu_istim-user_nodejitsudb4408612239',
   //
   // username: '',
   // password: '',
