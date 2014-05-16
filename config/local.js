@@ -36,9 +36,9 @@ module.exports = {
   // In production, you'll probably want to change this setting 
   // to 80 (http://) or 443 (https://) if you have an SSL certificate
 
-  port: process.env.PORT || 80,
+  port: process.env.PORT || 3000,
   environment: process.env.NODE_ENV || 'development',
-  host: process.env.HOST || 'istimuser.jit.su',
+  host: process.env.HOST || 'localhost',
 
   //port: process.env.PORT || 1337,
 

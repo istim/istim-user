@@ -1,6 +1,6 @@
 // Person.js
 module.exports = {
-  migrate: 'safe',
+  migrate: process.env.MIGRATE || 'alter',
   attributes: {
     firstName: 'string',
     lastName: 'string',
