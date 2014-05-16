@@ -20,30 +20,9 @@ module.exports.policies = {
   	update: ['isAuthenticated', 'isAdminOrObjectOwner'],
   	destroy: ['isAuthenticated', 'isAdminOrObjectOwner'],
   	// find: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	// getUserInfo: ['isAuthorized', 'hasGrant'],
-  	// getAuthenticated: ['isAuthorized'],
-  	// getAllAuthenticated: ['isAuthorized'],
   	login: ['alreadyAuthenticated'],
   	logout: ['isAuthenticated']
   },
-  ClientController: {
-  	update: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	destroy: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	find: ['isAuthenticated', 'isAdminOrObjectOwner']
-  },
-  TokenController: {
-  	create: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	update: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	destroy: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	find: ['isAuthenticated', 'isAdminOrObjectOwner']
-  },
-  GrantController: {
-  	create: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	update: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	destroy: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	find: ['isAuthenticated', 'isAdminOrObjectOwner'],
-  	grantAccess: ['isAuthenticated']
-  }
   /*
 	// Here's an example of adding some policies to a controller
 	RabbitController: {
