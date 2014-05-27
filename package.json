@@ -1,7 +1,7 @@
 {
   "name": "istim-user",
   "private": true,
-  "version": "0.0.0-19",
+  "version": "0.0.0-20",
   "description": "istim-user application",
   "dependencies": {
     "sails": "0.9.9",
